@@ -12,12 +12,12 @@ export default function Card(props) {
           <span className="letter">{props.author[0]}</span>
         </div>
         <div className="card-title-group">
-          <h5 className="card-title">Title</h5>
-          <div className="card-date">Date</div>
+          <h5 className="card-title">{props.title}</h5>
+          <div className="card-date">{props.date}</div>
         </div>
       </div>
-      <img className="card-image" src={food} alt="Logo" />
-      <div className="card-text">Description</div>
+      <img className="card-image" src={props.image} alt="Logo" />
+      <div className="card-text">{props.description}</div>
       <div className="card-like-bar">
         {props.liked ? (
           <img className="card-like-icon" src={heartFill} alt="Logo" />
@@ -25,7 +25,7 @@ export default function Card(props) {
           <img className="card-like-icon" src={heartOutline} alt="Logo" />
         )}
         <div className="like-text">
-          <b>7</b> kişi bu tarifi beğendi.
+          <b>{props.likeCount}</b> kişi bu tarifi beğendi.
         </div>
       </div>
     </div>
